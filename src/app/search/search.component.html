@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row  mt-5 mb-4">
+        <div class="col-lg-9 col-sm-12 col-xs-122">
+            <input type="text" placeholder="Enter modelName of vehicle" [(ngModel)]="modelName" class="form-control" name="modelName">
+        </div>
+        <div class="col-lg-3 col-sm-12 col-xs-12">
+            <button type="button" class="btn btn-info" (click)="findByModelName()">Search</button>
+        </div>
+    </div>
+    
+
+    <h2>Result</h2>
+    <div class="container mt-5">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="bg-info text-light">
+                        <td>Company</td>
+                        <td>Model</td>
+                        <td>Price(in lak)</td>
+                        <td>Mileage(km/lit)</td>
+                        <td>Action</td>
+                    </tr> 
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{vehicle.companyName}}</td>
+                        <td>{{vehicle.modelName}}</td>
+                        <td>{{vehicle.price}}</td>
+                        <td>{{vehicle.mileage}}</td>
+                        <td><button class="btn btn-danger" (click)="deleteVehicle(vehicle.modelName)" *ngIf="!(vehicle.isEmpty)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>

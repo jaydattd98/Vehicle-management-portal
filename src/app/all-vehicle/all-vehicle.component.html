@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <table class="table table-striped">
+            <thead>
+                <tr class="bg-info text-light">
+                    <td>Company</td>
+                    <td>Model</td>
+                    <td>Price(in lak)</td>
+                    <td>Mileage(km/lit)</td>
+                    <td colspan="2" class="text-center">Action</td>
+                </tr> 
+            </thead>
+            <tbody>
+                <tr *ngFor="let v of vehicles">
+                    <td>{{v.companyName}}</td>
+                    <td>{{v.modelName}}</td>
+                    <td>{{v.price}}</td>
+                    <td>{{v.mileage}}</td>
+                    <td><button class="btn btn-primary text-light">Update</button></td>
+                    <td><button class="btn btn-danger" (click)="deleteVehicle(v.modelName)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
